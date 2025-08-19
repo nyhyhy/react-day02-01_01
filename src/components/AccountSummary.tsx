@@ -1,4 +1,8 @@
-function AccountSummary() {
+interface AccountSummaryProps {
+    totalSum: number;
+}
+
+function AccountSummary({totalSum}: AccountSummaryProps) {
     return (
         <>
             <div className="border-t pt-4">
@@ -7,7 +11,7 @@ function AccountSummary() {
                         총 잔액
                     </span>
                     <span className="text-xl font-bold text-blue-600">
-                        21,347,280원
+                        {totalSum}원
                     </span>
                 </div>
             </div>

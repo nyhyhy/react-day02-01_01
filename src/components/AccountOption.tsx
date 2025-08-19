@@ -1,10 +1,14 @@
-function AccountOption() {
+interface AccountOptionProps {
+    numberOfAccount: number;
+}
+
+function AccountOption({numberOfAccount}: AccountOptionProps) {
     return (
         <>
             {/*헤더 섹션*/}
             <div className="mb-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">내 계좌 목록</h2>
-                <p className="text-gray-600">총 4개의 계좌</p>
+                <p className="text-gray-600">총 {numberOfAccount}개의 계좌</p>
             </div>
 
             {/*필터 및 정렬 옵션*/}
