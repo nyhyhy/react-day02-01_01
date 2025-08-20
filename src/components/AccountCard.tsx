@@ -1,16 +1,24 @@
+import { Link, useNavigate } from "react-router-dom";
+
 interface AccountCardProps {
+    id: number;
     name: string;
     accountNo: string;
     type: '입출금' | '예금' | '적금';
     balance: number;
 }
 
-function AccountCard({name, accountNo, type, balance}: AccountCardProps) {
+function AccountCard({id, name, accountNo, type, balance}: AccountCardProps) {
+    const navigate = useNavigate();
     return (
-        <div className="border rounded-lg p-4 mb-3 shadow-sm hover:shadow-md transition-shadow bg-white">
+        <div className="border rounded-lg p-4 mb-3 shadow-sm hover:shadow-md transition-shadow bg-white"
+            onClick={() => navigate(`/account/${id}`)}
+        >
             <div className="flex justify-between items-start mb-2">
                 <div>
+                    <Link to={`/account/${id}`}>
                     <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
+                    </Link>
                     <p className="text-sm text-gray-500">{accountNo}</p>
                 </div>
                 <div className="flex gap-2">

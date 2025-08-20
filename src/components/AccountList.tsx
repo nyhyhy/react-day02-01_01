@@ -19,6 +19,7 @@ function AccountList({accounts}: AccountListProps) {
             {accounts.map(({ id, name, accountNo, type, balance }) => (
                 <AccountCard
                     key={id}
+                    id={id}
                     name={name}
                     accountNo={accountNo}
                     type={type}
